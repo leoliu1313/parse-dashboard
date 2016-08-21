@@ -24,7 +24,7 @@ curl -X GET -H "X-Parse-Application-Id: FAKE_APP_ID" \
 https://FAKE_APP_ID.herokuapp.com/parse/classes/GameScore
 
 curl -X GET -H "X-Parse-Application-Id: FAKE_APP_ID" \
--H "X-Parse-Master-Key: FAKE_APP_ID"  \
+-H "X-Parse-Master-Key: FAKE_MASTER_KEY"  \
 https://FAKE_APP_ID.herokuapp.com/parse/classes/GameScore
 
 # get MONGODB_URI from https://dashboard.heroku.com/apps/FAKE_APP_ID/settings
