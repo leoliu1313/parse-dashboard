@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "serverURL": "FAKE_SERVER_URL", // http://FAKE_APP_ID.herokuapp.com/parse
+      "appId": "FAKE_APP_ID",
+      "masterKey": "FAKE_MASTER_KEY",
+      "appName": "FAKE_Name"
+    }
+  ],
+  "users": [
+    {
+      "user":"FAKE_USER", // a new account for parse-dashboard
+      "pass":"FAKE_PASS"
+    }
+  ]
+}
