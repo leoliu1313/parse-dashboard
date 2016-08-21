@@ -1,3 +1,85 @@
+
+# How to set up parse-server on Heroku
+
+```
+# http://guides.codepath.com/android/Configuring-a-Parse-Server
+
+# Click on the Deploy button to create a Parse App
+# set up App Name and use that for APP_ID and SERVER_URL, which is http://FAKE_APP_ID.herokuapp.com/parse
+# MASTER_KEY is a secret key
+
+curl -X POST \
+-H "X-Parse-Application-Id: FAKE_APP_ID" \
+-H "Content-Type: application/json" \
+-d '{}' \
+https://FAKE_APP_ID.herokuapp.com/parse/functions/hello
+  
+curl -X POST -H "X-Parse-Application-Id: FAKE_APP_ID" \
+-H "Content-Type: application/json" \
+-d '{"score":1337,"playerName":"Sean Plott","cheatMode":false}' \
+https://FAKE_APP_ID.herokuapp.com/parse/classes/GameScore
+
+curl -X GET -H "X-Parse-Application-Id: FAKE_APP_ID" \
+-H "Content-Type: application/json"  \
+https://FAKE_APP_ID.herokuapp.com/parse/classes/GameScore
+
+curl -X GET -H "X-Parse-Application-Id: FAKE_APP_ID" \
+-H "X-Parse-Master-Key: FAKE_APP_ID"  \
+https://FAKE_APP_ID.herokuapp.com/parse/classes/GameScore
+
+# get MONGODB_URI from https://dashboard.heroku.com/apps/FAKE_APP_ID/settings
+mongo MONGODB_URI
+
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+node -v
+make sure it is >= 4.3
+
+# if not >= 4.3, try this
+sudo apt update
+sudo apt upgrade
+sudo apt install node
+
+# if still not >= 4.3, try this
+# https://github.com/nodesource/distributions#debinstall
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+npm install -g parse-dashboard
+parse-dashboard --appId FAKE_APP_ID --masterKey FAKE_MASTER_KEY --serverURL "https://FAKE_APP_ID.herokuapp.com/parse"
+```
+
+# How to set up parse-dashboard on Heroku
+
+```
+# https://www.codementor.io/nodejs/tutorial/deploy-parse-dashboard-on-heroku
+
+mkdir my-parse-dashboard
+cd my-parse-dashboard
+
+# initialize git or clone this repository
+git init
+
+npm init
+npm install --save parse-dashboard
+
+# modify parse-dashboard-config.json
+
+git add package.json Procfile parse-dashboard-config.json
+git commit -m "My First Commit"
+
+heroku login 
+heroku create
+git push heroku master
+heroku ps:scale web=1
+heroku open
+
+# use http instead of https
+# https needs https://letsencrypt.org/ or https://startssl.com/
+http://fast-brushlands-18474.herokuapp.com/
+http://fast-brushlands-18474.herokuapp.com/apps/timeline-app/browser/GameScore
+```
+  
+  
 # Parse Dashboard
 
 [![Build Status](https://img.shields.io/travis/ParsePlatform/parse-dashboard/master.svg?style=flat)](https://travis-ci.org/ParsePlatform/parse-dashboard)
