@@ -32,7 +32,7 @@ mongo MONGODB_URI
 
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 node -v
-make sure it is >= 4.3
+# make sure it is >= 4.3
 
 # if not >= 4.3, try this
 sudo apt update
@@ -44,6 +44,7 @@ sudo apt install node
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
+# make sure it is >= 4.3
 npm install -g parse-dashboard
 parse-dashboard --appId FAKE_APP_ID --masterKey FAKE_MASTER_KEY --serverURL "https://FAKE_APP_ID.herokuapp.com/parse"
 ```
