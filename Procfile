@@ -1,1 +1,1 @@
-web: bin/parse-dashboard --config Parse-Dashboard/parse-dashboard-config.json
+web: ./node_modules/.bin/parse-dashboard --config ./parse-dashboard-config.json --allowInsecureHTTP
