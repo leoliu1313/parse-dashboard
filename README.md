@@ -76,7 +76,7 @@ heroku open
 
 # use http instead of https
 # https needs https://letsencrypt.org/ or https://startssl.com/
-http://fast-brushlands-18474.herokuapp.com/
+http://xxx-brushlands-xxx.herokuapp.com/
 ```
   
   
